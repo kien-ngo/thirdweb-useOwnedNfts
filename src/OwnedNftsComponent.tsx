@@ -11,6 +11,9 @@ import {
 export default function UseOwnedNftsComponent() {
   const contractAddress = "0xCD4Ef397D4f1c936336C19fbc4ac43b78708C439";
   const { contract } = useContract(contractAddress, "nft-drop");
+
+  // List of token holders:
+  // https://etherscan.io/token/0xCD4Ef397D4f1c936336C19fbc4ac43b78708C439#balances
   const { data: nfts, isLoading } = useOwnedNFTs(contract, useAddress());
 
   // This doesn't return any item
